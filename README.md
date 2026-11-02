@@ -94,15 +94,37 @@ Tanpa langkah ini, tombol login Google gagal dengan error `auth/unauthorized-dom
 
 1. Buka situs Anda, klik **Admin** di footer, login dengan Google.
 2. Klik **Edit situs** (pojok kanan bawah).
-3. Tab **Profil**: nama, keahlian, bio, WhatsApp, email, Instagram, foto.
-4. Tab **Karya**: tambah judul, kategori, link Reel/Post Instagram.
-5. Tab **Drive**: tambah nama folder, kategori, link folder Google Drive.
-6. Tab **Alat**: tambah software, kamera, atau gaya visual beserta grupnya.
-7. Klik **Simpan & terbitkan**. Situs langsung diperbarui untuk semua pengunjung.
+3. Tab **Profil**: nama, keahlian, bio, WhatsApp, email, Instagram, foto, link showreel, link file CV, dan tautan lain (LinkedIn, YouTube, Behance, dll; satu per baris dengan format `Nama | link`).
+4. Tab **Bagian halaman**: halaman tersusun dari bagian-bagian yang bisa Anda urutkan (▲▼), sembunyikan, duplikat, hapus, atau tambah. Klik nama bagian untuk mengisi isinya.
+5. Tab **Situs**: tema warna utama, izinkan pengunjung ganti tema, deskripsi untuk Google, serta unduh/impor cadangan data.
+6. Klik **Simpan & terbitkan** (atau Ctrl+S). Situs langsung diperbarui untuk semua pengunjung.
+
+Jenis bagian yang tersedia:
+
+| Bagian | Isinya |
+|---|---|
+| Tentang saya | Cerita panjang, foto, dan angka pencapaian (angkanya berjalan saat digulir) |
+| Galeri karya | Video/foto dari Instagram, YouTube, Vimeo, TikTok, Drive, atau gambar; filter kategori; bisa ditandai untuk sorotan hero |
+| Proyek / studi kasus | Klien, tahun, peran, cerita proyek, tag, video, dan link proyek |
+| Timeline | Pengalaman kerja, pendidikan, organisasi, dll (bisa dipakai berkali-kali). Setiap entri bisa diklik dan membuka **deck presentasi layar penuh**: slide pembuka, konteks, angka dampak, satu slide per pencapaian (format `Judul: penjelasan`), contoh proyek (embed video/gambar/Canva/Figma/situs), dan penutup. Navigasi dengan panah, keyboard, atau geser di HP |
+| Keahlian & alat | Dikelompokkan per grup, dengan bar level opsional |
+| Layanan | Kartu layanan dengan harga opsional dan tombol tanya via WhatsApp |
+| Embed Instagram / TikTok / YouTube | Post tampil langsung di halaman, plus tombol Ikuti |
+| Testimoni | Kutipan klien yang bisa digeser |
+| Klien & kolaborator | Nama atau logo yang berjalan |
+| Sertifikat & penghargaan | Daftar dengan tombol lihat bukti (Drive/PDF/gambar) |
+| Arsip Google Drive | Folder yang isinya bisa dilihat langsung |
+| CV / Resume | Lihat & unduh PDF CV, atau cetak CV versi web yang dibuat otomatis dari isi Timeline, Keahlian, Proyek, dan Sertifikat |
+| Teks & embed bebas | Teks plus embed apa saja: Spotify, Figma, Canva, Google Slides/Docs, Behance, Maps, PDF |
+| Kontak | Brief WhatsApp, salin email, simpan kontak (vCard), bagikan halaman |
+
+Saat login sebagai admin, bagian yang disembunyikan tetap tampil dengan garis putus-putus agar bisa Anda pratinjau. Pengunjung tidak melihatnya.
+
+Data lama (Karya, Drive, Alat) otomatis dipindah ke bagian baru. Bagian contoh lain (Pengalaman, Testimoni, dll) awalnya disembunyikan; isi dulu, lalu klik **Tampilkan**.
 
 Tips link:
 - Instagram: buka Reel, salin link dari bilah alamat (bentuknya `https://www.instagram.com/reel/XXXX/`). Akun Instagram harus publik agar bisa diputar di situs.
-- Google Drive: klik kanan folder > **Share** > ubah akses ke **Anyone with the link** > **Copy link**.
+- Google Drive: klik kanan folder atau file > **Share** > ubah akses ke **Anyone with the link** > **Copy link**. Cara yang sama untuk file CV (PDF).
 
 ## Domain sendiri (opsional)
 
