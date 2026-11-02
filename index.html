@@ -11,6 +11,7 @@
 [data-g=film]{--bg:#2B1E16;--bg2:#3A2A1F;--bg3:#4B3727;--ink:#F7EAD6;--a:#F0A93B;--a2:#D4603F;--on:#241504;--tf:sepia(.22) saturate(1.1) contrast(1.04)}
 [data-g=mono]{--bg:#202124;--bg2:#2B2C30;--bg3:#383A3F;--ink:#F1F1F0;--a:#FFFFFF;--a2:#A3A6AD;--on:#16171A;--tf:grayscale(1) contrast(1.08)}
 [data-g=neon]{--bg:#1E1238;--bg2:#2B1A50;--bg3:#3B2569;--ink:#F6EEFF;--a:#FF3D9A;--a2:#2FE3F5;--on:#1E0A18;--tf:saturate(1.35) contrast(1.08) hue-rotate(-8deg)}
+[data-g=navy]{--bg:#14213D;--bg2:#1B2C4E;--bg3:#253A63;--ink:#F7F3EA;--a:#D9A441;--a2:#5FC2B8;--on:#1A1204;--tf:saturate(1.05) contrast(1.04)}
 [data-g=day]{--bg:#E9EEF3;--bg2:#F6F8FA;--bg3:#FFFFFF;--ink:#15212B;--a:#D4441C;--a2:#1F6FEB;--on:#fff;--tf:none;color-scheme:light}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px;background:var(--bg);-webkit-text-size-adjust:100%}
@@ -139,8 +140,8 @@ h2 sup{font-size:.32em;vertical-align:top;margin-left:10px;color:var(--a);font-s
 .dpt .n{font:800 clamp(110px,17vw,260px)/.8 Archivo,sans-serif;font-stretch:62%;color:var(--a);font-variant-numeric:tabular-nums}
 .dpt h3{font-size:clamp(36px,5.2vw,76px);line-height:.92;text-transform:uppercase;margin-bottom:20px;max-width:16ch}
 .dpt p{font-size:clamp(18px,1.8vw,25px);line-height:1.45;color:var(--mut);max-width:46ch;margin:0}
-.dnum{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:28px}
-.dnum div{border-top:2px solid var(--a);padding-top:18px}.dnum b{display:block;font:800 clamp(64px,9vw,140px)/.9 Archivo,sans-serif;font-stretch:62%;font-variant-numeric:tabular-nums}.dnum span{color:var(--mut);font-size:clamp(16px,1.6vw,20px)}
+.dnum{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px}
+.dnum div{border-top:2px solid var(--a);padding-top:18px;min-width:0}.dnum b{display:block;font:800 clamp(56px,7vw,120px)/.9 Archivo,sans-serif;font-stretch:62%;font-variant-numeric:tabular-nums}.dnum span{color:var(--mut);font-size:clamp(16px,1.6vw,20px)}
 .dmd{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:clamp(20px,4vw,56px);align-items:center}
 .dmf{position:relative;aspect-ratio:16/10;border-radius:16px;overflow:hidden;background:var(--bg2);border:1px solid var(--ln)}.dmf.v{aspect-ratio:auto;height:min(64vh,640px);width:min(360px,100%);justify-self:center}
 .dmf iframe,.dmf img{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}.dmf img{object-fit:contain}
@@ -289,6 +290,49 @@ dialog::backdrop{background:rgba(0,0,0,.75);backdrop-filter:blur(6px)}
   #cvp .e{display:grid;grid-template-columns:1fr auto;gap:0 14pt;margin-bottom:9pt;break-inside:avoid}#cvp .e small{color:#555;text-align:right;white-space:nowrap}
   #cvp ul{margin:3pt 0 0;padding-left:14pt}#cvp p{margin:0 0 6pt}#cvp dl{display:grid;grid-template-columns:auto 1fr;gap:3pt 12pt;margin:0}#cvp dt{font-weight:700}#cvp dd{margin:0}
 }
+/* v2: cerita hero, perjalanan, studi kasus, bukti skill */
+.sty{max-width:40ch;font-size:clamp(20px,2vw,24px);line-height:1.4;margin:0 0 14px;font-weight:600;border-left:3px solid var(--a);padding-left:16px}
+.jr{position:relative;margin-top:8px}
+.jrs{display:flex;flex-direction:column;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 0 18px;scrollbar-width:thin}
+.jr.pin{height:calc(100vh + var(--jw))}
+.jr.pin .jrs{position:sticky;top:0;height:100vh;overflow:hidden;justify-content:center;padding:0}
+.jrt{order:1;list-style:none;margin:0;padding:8px 0 0;display:flex;gap:24px;width:max-content;transform:translateX(var(--jp,0));will-change:transform}
+.jrt li{flex:none;width:min(360px,78vw);scroll-snap-align:start;position:relative;padding:30px 24px 24px;background:var(--bg2);border:1px solid var(--ln);border-radius:16px}
+.jrt li::before{content:"";position:absolute;left:24px;top:-7px;width:12px;height:12px;border-radius:50%;background:var(--a);box-shadow:0 0 0 5px color-mix(in srgb,var(--a) 25%,transparent)}
+.jy{display:block;font:800 44px/1 Archivo,sans-serif;font-stretch:68%;color:var(--a);margin-bottom:12px}
+.jrt h3{font-size:24px;line-height:1.15;margin:0 0 10px;text-transform:none}.jrt p{margin:0;color:var(--mut)}
+.jrl{order:2;display:block;height:3px;border-radius:2px;background:var(--ln);overflow:hidden}.jrl i{display:block;height:100%;background:var(--a);transform-origin:left;transform:scaleX(var(--jk,0))}
+.rv.in .jrt li{animation:jin .6s both;animation-delay:calc(var(--d)*90ms)}
+@keyframes jin{from{opacity:0;transform:translateY(16px)}}
+.jq{margin:36px 0 0;max-width:46ch;font-size:clamp(20px,2.2vw,28px);line-height:1.4;font-style:italic;border-left:3px solid var(--a2);padding-left:20px}.jq p{margin:0}
+.pcm{display:flex;gap:18px;flex-wrap:wrap}.pcm span{display:flex;flex-direction:column;font-size:13px;color:var(--mut)}.pcm b{font:800 30px/1 Archivo,sans-serif;font-stretch:68%;color:var(--a)}
+.pcb .b small{opacity:.7;font-weight:500;margin-left:4px}
+.wk.np{outline:2px dashed var(--a);outline-offset:3px}.bg.npb{background:var(--a);color:var(--on)}
+.lbd{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0}.lbd dt{font-weight:700;font-size:14px}.lbd dd{margin:0;color:var(--mut)}
+.dfl{list-style:none;margin:0;padding:0;display:grid;gap:14px;max-width:900px}.dfl li{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:baseline;border-top:1px solid var(--ln);padding-top:14px}
+.dfl span{font:800 40px/1 Archivo,sans-serif;font-stretch:62%;color:var(--a)}.dfl p{margin:0;font-size:clamp(17px,1.6vw,22px);line-height:1.45}
+.dsl.on .dfl li{animation:jin .5s both;animation-delay:calc(var(--d)*80ms)}
+button.ck{font:inherit;color:inherit;text-align:left;cursor:pointer}.ck em,.tsc2 em{display:inline-block;margin-top:6px;font-style:normal;font-size:12px;font-weight:700;color:var(--a)}.ck[aria-pressed=true]{outline:2px solid var(--a);outline-offset:2px}
+.tsk{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:0 0 18px}
+.tsc2{font:inherit;color:inherit;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:14px;border:1px solid var(--ln);background:var(--bg2);transition:transform .2s,border-color .2s,background .2s}
+.tsc2:hover{transform:translateY(-3px);border-color:var(--a)}.tsc2 i{font:800 28px/1 Archivo,sans-serif;font-stretch:68%;color:var(--a);font-style:normal}.tsc2 strong{font-size:19px;line-height:1.15}.tsc2 small{color:var(--mut);font-size:14px}
+.tsc2[aria-pressed=true]{border-color:var(--a);background:color-mix(in srgb,var(--a) 14%,var(--bg2))}
+.pfh{margin:0 0 14px}
+.pfp{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s,margin .35s}.pfp.on{grid-template-rows:1fr;margin-bottom:22px}.pfp>*{overflow:hidden;min-height:0}
+.pfi{position:relative;padding:22px;border:1px solid var(--a);border-radius:16px;background:var(--bg2);display:grid;gap:14px}.pfi h3{font-size:30px;margin:0;text-transform:none;padding-right:44px}.pfi p{margin:4px 0 0;color:var(--mut)}.pfi .dkk{margin-bottom:6px}
+.pfl{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.pfc{font:inherit;color:inherit;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:14px;border-radius:12px;border:1px solid var(--ln);background:var(--bg3);transition:border-color .2s}.pfc:hover{border-color:var(--a)}
+.pfc em{font-style:normal;font-size:12px;font-weight:700;color:var(--a2);text-transform:uppercase;letter-spacing:.08em}.pfc span{font-size:13px;color:var(--mut)}
+.pfx{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:1px solid var(--ln);background:transparent;color:inherit;cursor:pointer}
+.dsh{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:18px;max-width:1200px}
+.dsh figure{margin:0;display:grid;gap:8px}.dsh figcaption{font-size:14px;color:var(--mut)}
+.dshb{display:block;padding:0;border:1px solid var(--ln);border-radius:12px;overflow:hidden;background:var(--bg2);cursor:zoom-in;aspect-ratio:16/10;transition:transform .25s,border-color .25s}
+.dshb:hover{transform:translateY(-3px);border-color:var(--a)}.dshb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.dsl.on .dsh figure{animation:jin .5s both;animation-delay:calc(var(--d)*70ms)}
+.zmv{position:fixed;inset:0;z-index:90;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:56px 20px 24px;cursor:zoom-out;animation:zin .25s both}
+.zmv img{max-width:100%;max-height:calc(100vh - 120px);object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.4);pointer-events:none}.zmv p{margin:0;color:var(--mut);pointer-events:none}.zmv .pfx{position:fixed;top:16px;right:16px;pointer-events:none}
+@keyframes zin{from{opacity:0}}
+.pfs{border:1px solid var(--ln);border-radius:10px;padding:10px 12px;display:grid;gap:4px;max-height:260px;overflow:auto;margin:0}.pfs small{color:var(--mut)}
 @media (max-width:980px){h1{font-size:max(40px,min(22vw,140px,calc((100vw - 56px)/(var(--L,6)*.5))))}.hg,.ab,.split,.cvb{grid-template-columns:1fr;gap:36px}.split .hd{position:static}.ct{grid-template-columns:1fr;gap:36px}.tc{display:none}.abp{max-width:360px}}
 @media (max-width:860px){dialog[open]{grid-template-columns:1fr;overflow-y:auto}.lbm{padding:50px 12px 12px}.fr.v{height:min(70vh,640px)}.lbi h3{font-size:36px}}
 @media (max-width:700px){.top .in{flex-wrap:wrap;gap:8px 12px;padding:8px 0}.top nav{order:3;width:100%;margin:0}.gr{margin-left:auto}.hero{padding-top:calc(130px + env(safe-area-inset-top,0px))}section{padding-top:80px}.ln{grid-template-columns:1fr;gap:10px}.sl .cp{right:24px;bottom:48px}.pip{width:54px;height:54px;font-size:18px;top:60px;bottom:auto}.lk a{font-size:26px}.dr{width:100%}.aw li{grid-template-columns:52px 1fr}.aw li>:last-child{grid-column:2;justify-self:start}.mqh a,.mqh span{font-size:30px}.dpt,.dmd{grid-template-columns:1fr}.dpt .n{font-size:90px}.dkr{display:none}.dsl{justify-content:flex-start;padding-top:24px}.xpc{padding:16px 14px}}
@@ -317,10 +361,11 @@ const ADMIN_EMAIL="ejafer19@gmail.com";
    th = item bisa punya thumbnail, feat = item bisa tampil di sorotan hero */
 const TYPES={
   about:{l:"Tentang saya",sf:[["text","Cerita lengkap (baris kosong = paragraf baru, **tebal**)","a"]],il:"Angka pencapaian",f:[["v","Angka (mis. 5+)"],["l","Keterangan"]]},
-  gallery:{l:"Galeri karya (video & foto)",il:"Karya",f:[["t","Judul"],["cat","Kategori (mis. Commercial)"],["url","Link (Instagram, YouTube, Vimeo, TikTok, Drive, gambar)"],["n","Catatan singkat (klien, tahun)"]],th:1,feat:1},
-  projects:{l:"Proyek / studi kasus",il:"Proyek",f:[["t","Nama proyek"],["client","Klien"],["year","Tahun"],["role","Peran saya"],["d","Cerita proyek: tantangan, proses, hasil","a"],["tags","Tag (pisahkan dengan koma)"],["url","Link video / embed utama (opsional)"],["link","Link proyek: situs, Behance, dll (opsional)"]],th:1},
+  gallery:{l:"Galeri karya (video & foto)",il:"Karya",f:[["t","Judul"],["cat","Kategori (mis. Untuk brand/klien, Konten pribadi, Video AI)"],["url","Link (Instagram, YouTube, Vimeo, TikTok, Drive, gambar)"],["n","Catatan singkat (klien, tahun)"],["brand","Brand / klien (opsional)"],["role","Peran saya (mis. ide, naskah, syuting, edit, prompt AI)"],["res","Hasil (opsional, mis. 120rb tayangan)"]],th:1,feat:1,perm:1},
+  projects:{l:"Proyek / studi kasus",il:"Proyek",f:[["t","Nama proyek"],["client","Klien"],["alias","Nama samaran klien (tampil bila klien dirahasiakan, mis. Bisnis produk digital edukasi)"],["year","Tahun"],["role","Peran saya"],["d","Ringkasan singkat untuk kartu","a"],["problem","Masalah: apa yang ingin diselesaikan (slide sendiri)","a"],["built","Yang saya bangun (slide sendiri)","a"],["flow","Cara kerja, satu langkah per baris","a"],["results","Hasil dalam angka, satu per baris: 3.176 | percakapan WhatsApp","a"],["learned","Yang saya pelajari (slide sendiri)","a"],["shots","Screenshot bukti, satu per baris: Keterangan | link (bukti/nama-file.webp atau link file Drive). Samarkan dulu nama, nomor HP, dan angka sensitif.","a"],["stack","Alat & teknologi (pisahkan koma)"],["media","Contoh/screenshot, satu per baris: Judul | link","a"],["tags","Tag (pisahkan dengan koma)"],["url","Link video / embed utama (opsional)"],["link","Link proyek: situs, Behance, dll (opsional)"]],th:1,conf:1},
+  journey:{l:"Perjalanan (garis waktu horizontal)",sf:[["text","Kutipan penutup (opsional)","a"]],il:"Titik perjalanan",f:[["year","Tahun / periode"],["t","Judul"],["d","Cerita singkat","a"]]},
   timeline:{l:"Timeline (pengalaman / pendidikan)",il:"Entri",f:[["role","Posisi / gelar"],["org","Perusahaan / institusi"],["period","Periode (mis. 2022 – sekarang)"],["loc","Lokasi"],["d","Pencapaian, satu per baris. Format “Judul: penjelasan” jadi slide sendiri","a"],["story","Konteks / cerita pembuka (slide ke-2, opsional)","a"],["hl","Angka dampak, satu per baris: 16.000+ | Pengikut","a"],["media","Contoh proyek, satu per baris: Judul | link (video, gambar, Drive, Canva, Figma, situs)","a"],["tags","Keahlian yang dipakai (pisahkan koma)"]]},
-  skills:{l:"Keahlian & alat",il:"Keahlian",f:[["g","Grup (mis. Software, Kamera, Soft skill)"],["n","Nama"],["d","Keterangan"],["lv","Level 0–100 (opsional, tampil sebagai bar)"]]},
+  skills:{l:"Keahlian & alat",il:"Keahlian",f:[["g","Grup (mis. Software, Kamera, Soft skill)"],["n","Nama"],["d","Keterangan"],["lv","Level 0–100 (opsional, tampil sebagai bar)"]],proof:1},
   services:{l:"Layanan",il:"Layanan",f:[["n","Nama layanan"],["d","Penjelasan","a"],["price","Harga mulai (opsional)"]]},
   feed:{l:"Embed Instagram / TikTok / YouTube",sf:[["handle","Link profil untuk tombol Ikuti (opsional)"]],il:"Post",f:[["url","Link post, reel, atau video"],["cap","Keterangan (opsional)"]]},
   testi:{l:"Testimoni",il:"Testimoni",f:[["q","Kutipan","a"],["n","Nama"],["r","Jabatan / perusahaan"]]},
@@ -355,9 +400,11 @@ SEED.sections.forEach(s=>{s.on=true;s.items=s.items||[]});
 let D=structuredClone(SEED),P=D.profile;
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const U=u=>/^https?:\/\//i.test(u||"")?esc(u):"#",ok=u=>/^https?:\/\//i.test(u||"")&&!/GANTI/.test(u);
+/* file lokal di repo (mis. bukti/dashboard.webp) dipakai tanpa membebani database */
+const loc=u=>/^(\.\/)?[\w-]+(\/[\w.-]+)*\.(jpe?g|png|webp|gif|avif|pdf|mp4|webm)$/i.test(String(u||"").trim());
+const U=u=>/^https?:\/\//i.test(u||"")||loc(u)?esc(String(u).trim()):"#",ok=u=>/^https?:\/\//i.test(u||"")&&!/GANTI/.test(u)||loc(u);
 const RM=matchMedia("(prefers-reduced-motion:reduce)").matches,CL=["var(--a)","var(--a2)","#E7C14A","#B58BFF","#5BD38A"];
-const GR=[["teal","Teal & Orange","#FF8A3D","#37C8C0"],["film","Warm film","#F0A93B","#D4603F"],["mono","Mono","#FFFFFF","#6B6E75"],["neon","Neon night","#FF3D9A","#2FE3F5"],["day","Daylight","#D4441C","#1F6FEB"]];
+const GR=[["teal","Teal & Orange","#FF8A3D","#37C8C0"],["navy","Navy & Gold","#D9A441","#5FC2B8"],["film","Warm film","#F0A93B","#D4603F"],["mono","Mono","#FFFFFF","#6B6E75"],["neon","Neon night","#FF3D9A","#2FE3F5"],["day","Daylight","#D4441C","#1F6FEB"]];
 const RES=["top","app","adm","toast","cvp","dk","dks","lb","lbm","lbi","mon","htc","tc","bn","nt","st","sz"];
 let open=false,tab="profil",sel=null,can=false,tm,ready=false,anim=true,bt="",dirty=false,grade="teal",ug=null,LB={s:0,i:0};const exp=new Set(),FW={};
 const tc=s=>{s=Math.max(0,s);const x=Math.floor(s);return[Math.floor(x/3600),Math.floor(x/60)%60,x%60,Math.floor(s%1*24)].map(n=>String(n).padStart(2,"0")).join(":")};
@@ -374,16 +421,35 @@ const host=u=>{try{const h=new URL(u).hostname.replace(/^(www|m)\./,"").split(".
 const links=()=>{const a=ok(P.ig)?[{n:"Instagram",url:P.ig,s:"@"+String(P.ig).replace(/\/+$/,"").split("/").pop()}]:[];
   String(P.links||"").split("\n").forEach(l=>{const m=l.split("|"),url=(m.length>1?m.slice(1).join("|"):m[0]).trim();if(ok(url))a.push({n:m.length>1&&m[0].trim()||host(url),url,s:url.replace(/^https?:\/\/(www\.)?/,"").replace(/\/+$/,"")})});return a};
 const EM=t=>`<div class="empty">${t||"Belum ada isi. Tambahkan lewat Edit situs."}</div>`;
+/* karya tanpa izin brand hanya terlihat oleh admin; klien bisa dirahasiakan */
+const vis=w=>can||!w.noperm;
+const cl=x=>x.conf?x.alias||"Klien dirahasiakan":x.client;
+const isCase=x=>!!(x.problem||x.built||x.flow||x.results||x.learned||x.shots);
+/* bukti skill: kunci "jenis|judul" untuk proyek, karya, sertifikat, dan pengalaman */
+const pkey=(s,x)=>s.type+"|"+(s.type=="timeline"?[x.role,x.org].filter(Boolean).join(" · "):x.t);
+const PK={projects:"Proyek",gallery:"Karya",awards:"Sertifikat",timeline:"Pengalaman"};
+const proofCands=()=>D.sections.flatMap((s,si)=>PK[s.type]?s.items.map((x,i)=>({s,si,i,x,key:pkey(s,x),kind:PK[s.type]})).filter(c=>c.key.split("|")[1]&&(s.type!="gallery"||vis(c.x))):[]);
+const proofOpen=c=>c.s.type=="timeline"||(c.s.type=="projects"&&isCase(c.x))?`data-dk="${c.si}:${c.i}"`:`data-o="${c.si}:${c.i}"`;
 /* baris "A | B" → {a,b};  baris "Judul: isi" → {t,d} */
 const pairs=s=>String(s||"").split("\n").map(l=>l.trim()).filter(Boolean).map(l=>{const i=l.indexOf("|");return i<0?{a:l,b:""}:{a:l.slice(0,i).trim(),b:l.slice(i+1).trim()}});
 const bullets=s=>String(s||"").split("\n").map(l=>l.replace(/^\s*[-•*]\s*/,"").trim()).filter(Boolean).map(l=>{const i=l.indexOf(":");return i>0&&i<70?{t:l.slice(0,i).trim(),d:l.slice(i+1).trim()}:{t:"",d:l}});
-const deckSlides=x=>{const S=[{k:"cover"}];if(x.story)S.push({k:"txt"});const hl=pairs(x.hl);if(hl.length)S.push({k:"num",hl});
+/* screenshot bukti: "Keterangan | link" → gambar kecil + versi besar untuk zoom */
+const shotsOf=x=>pairs(x.shots).map(m=>{const url=ok(m.b)?m.b:ok(m.a)?m.a:"",f=info(url);if(!url)return null;
+  const sm=f.k=="img"?f.t:f.k=="dv"?f.t:"",big=f.k=="dv"?f.t.replace(/sz=w\d+/,"sz=w2000"):sm;return sm?{t:m.b?m.a:"",sm,big,url}:null}).filter(Boolean);
+const caseSlides=x=>{const S=[{k:"pcover"}];
+  if(x.problem)S.push({k:"sec",h:"Masalah",b:x.problem});if(x.built)S.push({k:"sec",h:"Yang saya bangun",b:x.built});
+  const st=String(x.flow||"").split("\n").map(l=>l.replace(/^\s*(\d+[.)]|[-•*])\s*/,"").trim()).filter(Boolean);if(st.length)S.push({k:"flow",st});
+  const hl=pairs(x.results);if(hl.length)S.push({k:"num",hl,h:"Hasil"});
+  const sh=shotsOf(x);for(let j=0;j<sh.length;j+=6)S.push({k:"shots",sh:sh.slice(j,j+6),j,n:sh.length});if(x.learned)S.push({k:"sec",h:"Yang saya pelajari",b:x.learned});
+  pairs(x.media).forEach(m=>{const url=ok(m.b)?m.b:ok(m.a)?m.a:"";if(url)S.push({k:"media",t:m.b?m.a:host(url),url})});
+  S.push({k:"end"});return S};
+const deckSlides=(x,ty)=>{if(ty=="projects")return caseSlides(x);const S=[{k:"cover"}];if(x.story)S.push({k:"txt"});const hl=pairs(x.hl);if(hl.length)S.push({k:"num",hl});
   const pts=bullets(x.d);pts.forEach((p,j)=>S.push({k:"pt",p,j,n:pts.length}));
   pairs(x.media).forEach(m=>{const url=ok(m.b)?m.b:ok(m.a)?m.a:"";if(url)S.push({k:"media",t:m.b?m.a:host(url),url})});
   S.push({k:"end"});return S};
 
 /* ===== deteksi link: embed + thumbnail otomatis ===== */
-function info(u){u=(u||"").trim();let x,m,id;try{x=new URL(u)}catch(e){return{k:"none"}}
+function info(u){u=(u||"").trim();if(loc(u))u=new URL(u,location.href).href;let x,m,id;try{x=new URL(u)}catch(e){return{k:"none"}}
   if(!/^https?:$/.test(x.protocol)||/GANTI/.test(u))return{k:"none"};
   const h=x.hostname.replace(/^(www|m)\./,""),p=x.pathname,q=x.searchParams;
   if(h=="instagram.com"&&(m=p.match(/^\/(?:[^/]+\/)?(reel|reels|p|tv)\/([\w-]+)/)))return{k:"ig",l:"Instagram",v:1,e:`https://www.instagram.com/${m[1]=="reels"?"reel":m[1]}/${m[2]}/embed`};
@@ -406,7 +472,7 @@ function info(u){u=(u||"").trim();let x,m,id;try{x=new URL(u)}catch(e){return{k:
 const EH={ig:640,tt:740,sp:352,gd:520,fg:520,cn:520,be:560,map:420,pdf:640,df:520};
 const embedOf=u=>{const f=info(u);if(f.k=="none")return"";if(f.e&&f.k!="vid")return f.e.replace(/([?&])autoplay=1&?/,"$1").replace(/[?&]$/,"");return/^https:\/\//i.test(u)?u:""};
 const dlUrl=u=>{const f=info(u);return f.k=="dv"?`https://drive.google.com/uc?export=download&id=${f.id}`:u};
-const thumbOf=it=>{if(/^(https:\/\/|data:image\/)/i.test(it.th||"")){const i=info(it.th);return i.t||it.th}return info(it.url).t||""};
+const thumbOf=it=>{if(/^(https:\/\/|data:image\/)/i.test(it.th||"")||loc(it.th)){const i=info(it.th);return i.t||it.th}return info(it.url).t||""};
 function cvs(s){let h=0;for(const c of String(s||"x"))h=(h*31+c.charCodeAt(0))>>>0;return`--x1:${h%100}%;--y1:${(h>>3)%100}%;--x2:${(h>>7)%100}%;--y2:${(h>>11)%100}%`}
 const th=it=>{const s=thumbOf(it),t=it.t||it.n||"?";return`<div class="th" data-i="${esc(t.trim()[0]?.toUpperCase()||"?")}" style="${cvs(t)}">${s?`<img data-th src="${esc(s)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">`:""}</div>`};
 
@@ -414,15 +480,22 @@ const th=it=>{const s=thumbOf(it),t=it.t||it.n||"?";return`<div class="th" data-
 const ttl=s=>esc(s.title).replace(/\n/g,"<br>");
 const hd=(s,n)=>`<h2>${ttl(s)}${n?`<sup>${n}</sup>`:""}</h2>${s.sub?`<p class="sub">${esc(s.sub)}</p>`:""}`;
 const waUrl=m=>"https://wa.me/"+digits(P.wa)+"?text="+encodeURIComponent(m);
-const wcard=(w,si)=>{const f=info(w.url),r=f.v?"v":(f.k=="none"||f.k=="link"?["v","s","h"][w.i%3]:"h");return`<article class="wk ${r}"><button class="wb" data-o="${si}:${w.i}" aria-label="Putar ${esc(w.t)}">${th(w)}<span class="sc"></span><em class="tg">${esc(w.cat)}</em>${f.l?`<span class="bg">${esc(f.l)}</span>`:""}<span class="pl"></span><span class="cp"><strong>${esc(w.t)}</strong><small>${esc(w.n)}</small></span></button></article>`};
+const wcard=(w,si)=>{const f=info(w.url),r=f.v?"v":(f.k=="none"||f.k=="link"?["v","s","h"][w.i%3]:"h");return`<article class="wk ${r}${w.noperm?" np":""}"><button class="wb" data-o="${si}:${w.i}" aria-label="Putar ${esc(w.t)}">${th(w)}<span class="sc"></span><em class="tg">${esc(w.cat)}</em>${w.noperm?`<span class="bg npb">Belum ada izin · hanya admin</span>`:f.l?`<span class="bg">${esc(f.l)}</span>`:""}<span class="pl"></span><span class="cp"><strong>${esc(w.t)}</strong><small>${esc([w.brand,w.role].filter(Boolean).join(" · ")||w.n)}</small></span></button></article>`};
+function proofPanel(si,i){const t=D.sections[si].items[i],p=$("#pfp-"+si);if(!p||!t)return;const want=new Set(t.proof||[]),cs=proofCands().filter(c=>want.has(c.key));
+  $$(`[data-sk^="${si}:"]`).forEach(b=>b.setAttribute("aria-pressed",b.dataset.sk==si+":"+i));
+  p.innerHTML=`<div class="pfi"><div><span class="dkk">Bukti keahlian</span><h3>${esc(t.n)}</h3>${t.d?`<p>${esc(t.d)}</p>`:""}</div>${cs.length?`<div class="pfl">${cs.map(c=>`<button class="pfc" ${proofOpen(c)}><em>${esc(c.kind)}</em><strong>${esc(c.key.split("|").slice(1).join("|"))}</strong><span>Buka →</span></button>`).join("")}</div>`:`<p class="hint">Belum ada bukti yang terhubung ke keahlian ini.</p>`}<button class="pfx" data-a="pfx" data-v="${si}" aria-label="Tutup bukti">✕</button></div>`;
+  p.classList.add("on")}
 const R={
   about:s=>`<div class="ab"><div class="abp">${hasPh()?`<img src="${esc(P.photo)}" alt="${esc(P.name)}" loading="lazy">`:`<span class="ini">${ini()}</span>`}</div><div>${hd(s)}<div class="txt abt">${txt(s.text||P.bio)}</div>${s.items.length?`<div class="stats">${s.items.map(x=>`<div><b${anim?" data-cnt":""}>${esc(x.v)}</b><span>${esc(x.l)}</span></div>`).join("")}</div>`:""}<div class="facts">${P.city?`<span><i>Lokasi</i>${esc(P.city)}</span>`:""}${P.email?`<span><i>Email</i>${esc(P.email)}</span>`:""}${P.status?`<span><i>Status</i>${esc(P.status)}</span>`:""}</div></div></div>`,
-  gallery:(s,si)=>{const f=FW[si]||"Semua",wc=[...new Set(s.items.map(w=>w.cat).filter(Boolean))],ws=s.items.map((w,i)=>({...w,i})).filter(w=>f=="Semua"||w.cat==f);
-    return`${hd(s,s.items.length)}${wc.length>1?`<div class="chips">${["Semua",...wc].map(c=>`<button class="chip" data-f="${esc(c)}" data-fs="${si}" aria-pressed="${c==f}">${esc(c)}</button>`).join("")}</div>`:""}<div class="wg">${ws.map(w=>wcard(w,si)).join("")||EM("Belum ada karya.")}</div>`},
-  projects:(s,si)=>`${hd(s,s.items.length)}<div class="pj">${s.items.map((x,i)=>`<article class="pc"><button class="wb" data-o="${si}:${i}" aria-label="Lihat ${esc(x.t)}">${th(x)}<span class="sc"></span>${x.year?`<em class="tg">${esc(x.year)}</em>`:""}${ok(x.url)?`<span class="bg">${esc(info(x.url).l)}</span><span class="pl"></span>`:""}</button><div class="pcb">${x.client||x.role?`<span class="mt">${esc([x.client,x.role].filter(Boolean).join(" · "))}</span>`:""}<h3>${esc(x.t)}</h3><p>${esc(String(x.d||"").replace(/\s+/g," "))}</p>${tags(x.tags)}<button class="b sm" data-o="${si}:${i}">Lihat studi kasus</button></div></article>`).join("")||EM()}</div>`,
+  gallery:(s,si)=>{const all=s.items.map((w,i)=>({...w,i})).filter(vis),f=FW[si]||"Semua",wc=[...new Set(all.map(w=>w.cat).filter(Boolean))],ws=all.filter(w=>f=="Semua"||w.cat==f);
+    return`${hd(s,all.length)}${wc.length>1?`<div class="chips">${["Semua",...wc].map(c=>`<button class="chip" data-f="${esc(c)}" data-fs="${si}" aria-pressed="${c==f}">${esc(c)}</button>`).join("")}</div>`:""}<div class="wg">${ws.map(w=>wcard(w,si)).join("")||EM("Belum ada karya.")}</div>`},
+  projects:(s,si)=>`${hd(s,s.items.length)}<div class="pj">${s.items.map((x,i)=>{const c=isCase(x),oa=c?`data-dk="${si}:${i}"`:`data-o="${si}:${i}"`,r1=pairs(x.results).slice(0,2);
+    return`<article class="pc"><button class="wb" ${oa} aria-label="Lihat ${esc(x.t)}">${th(x)}<span class="sc"></span>${x.year?`<em class="tg">${esc(x.year)}</em>`:""}${ok(x.url)?`<span class="bg">${esc(info(x.url).l)}</span><span class="pl"></span>`:""}</button><div class="pcb">${cl(x)||x.role?`<span class="mt">${esc([cl(x),x.role].filter(Boolean).join(" · "))}</span>`:""}<h3>${esc(x.t)}</h3><p>${esc(String(x.d||x.problem||"").replace(/\s+/g," "))}</p>${r1.length?`<div class="pcm">${r1.map(h=>`<span><b>${esc(h.a)}</b>${esc(h.b)}</span>`).join("")}</div>`:""}${tags(x.stack||x.tags)}<button class="b sm" ${oa}>${c?`Buka studi kasus <small>${caseSlides(x).length} slide${shotsOf(x).length?` · ${shotsOf(x).length} bukti`:""}</small> →`:"Lihat studi kasus"}</button></div></article>`}).join("")||EM()}</div>`,
+  journey:(s,si)=>`${hd(s)}${s.items.length?`<div class="jr"><div class="jrs"><span class="jrl" aria-hidden="true"><i></i></span><ol class="jrt">${s.items.map((x,i)=>`<li style="--d:${i}"><span class="jy">${esc(x.year)}</span><h3>${esc(x.t)}</h3>${x.d?`<p>${esc(x.d)}</p>`:""}</li>`).join("")}</ol></div></div>`:EM()}${s.text?`<blockquote class="jq">${txt(s.text)}</blockquote>`:""}`,
   timeline:(s,si)=>`<div class="split"><div class="hd">${hd(s)}</div>${s.items.length?`<ol class="xp">${s.items.map((x,i)=>{const pts=bullets(x.d),hl=pairs(x.hl).slice(0,3),n=deckSlides(x).length;
     return`<li><article class="xpc" data-dk="${si}:${i}">${x.period?`<span class="xpd">${esc(x.period)}</span>`:""}<h3>${esc(x.role)}</h3>${x.org||x.loc?`<div class="xpo">${esc([x.org,x.loc].filter(Boolean).join(" · "))}</div>`:""}${hl.length?`<div class="xpm">${hl.map(h=>`<span><b>${esc(h.a)}</b>${esc(h.b)}</span>`).join("")}</div>`:""}${pts.length?`<ul>${pts.slice(0,4).map(p=>`<li>${esc(p.t||p.d)}</li>`).join("")}${pts.length>4?`<li>+${pts.length-4} lainnya</li>`:""}</ul>`:""}<button class="xpg" data-dk="${si}:${i}">Buka cerita lengkap <small>${n} slide</small> →</button></article></li>`}).join("")}</ol>`:EM()}</div>`,
-  skills:s=>{const gs=[...new Set(s.items.map(t=>t.g))];return`${hd(s)}<div class="tl"><div class="rl"></div><div class="ph"><b>00:00:00:00</b></div>${gs.map((g,gi)=>`<div class="ln"><h3>${esc(g)}</h3><div class="cl">${s.items.filter(t=>t.g==g).map(t=>{const lv=Math.max(0,Math.min(100,parseInt(t.lv)||0));return`<div class="ck" style="--c:${CL[gi%5]}"><strong>${esc(t.n)}</strong>${t.d?`<small>${esc(t.d)}</small>`:""}${lv?`<i class="lv" style="--lv:${lv}%" title="${lv}%"></i>`:""}</div>`}).join("")}</div></div>`).join("")||'<div class="empty" style="margin:16px 0">Belum ada keahlian.</div>'}</div>`},
+  skills:(s,si)=>{const gs=[...new Set(s.items.map(t=>t.g))],it=s.items.map((t,i)=>({...t,i})),np=t=>(t.proof||[]).length,tp=it.filter(t=>t.top),any=it.some(np);
+    return`${hd(s)}${tp.length?`<div class="tsk">${tp.map((t,j)=>`<button class="tsc2" data-sk="${si}:${t.i}" aria-pressed="false"><i>${String(j+1).padStart(2,"0")}</i><strong>${esc(t.n)}</strong>${t.d?`<small>${esc(t.d)}</small>`:""}${np(t)?`<em>${np(t)} bukti</em>`:""}</button>`).join("")}</div>`:""}${any?'<p class="hint pfh">Klik sebuah keahlian untuk melihat proyek, karya, atau sertifikat yang membuktikannya.</p>':""}<div class="pfp" id="pfp-${si}" aria-live="polite"></div><div class="tl"><div class="rl"></div><div class="ph"><b>00:00:00:00</b></div>${gs.map((g,gi)=>`<div class="ln"><h3>${esc(g)}</h3><div class="cl">${it.filter(t=>t.g==g).map(t=>{const lv=Math.max(0,Math.min(100,parseInt(t.lv)||0));return`<button class="ck${np(t)?" hp":""}" style="--c:${CL[gi%5]}" data-sk="${si}:${t.i}" aria-pressed="false"><strong>${esc(t.n)}</strong>${t.d?`<small>${esc(t.d)}</small>`:""}${np(t)?`<em>${np(t)} bukti</em>`:""}${lv?`<i class="lv" style="--lv:${lv}%" title="${lv}%"></i>`:""}</button>`}).join("")}</div></div>`).join("")||'<div class="empty" style="margin:16px 0">Belum ada keahlian.</div>'}</div>`},
   services:s=>`${hd(s)}<div class="sv">${s.items.map((x,i)=>`<article class="svc"><i>${String(i+1).padStart(2,"0")}</i><h3>${esc(x.n)}</h3><p>${esc(x.d)}</p>${x.price?`<span class="pr">${esc(x.price)}</span>`:""}<a class="b sm" href="${waUrl(`Halo ${P.name}, saya tertarik dengan layanan ${x.n}.`)}" target="_blank" rel="noopener">Tanya layanan ini</a></article>`).join("")||EM()}</div>`,
   feed:s=>{const hn=ok(s.handle)?String(s.handle).replace(/\/+$/,"").split("/").pop():"";
     return`${hd(s)}<div class="fd">${s.items.map(x=>{const f=info(x.url),e=f.k!="link"&&embedOf(x.url),wide=(f.k=="yt"||f.k=="vm")&&!f.v;
@@ -440,7 +513,7 @@ const R={
 };
 
 const top=()=>{$("#top").innerHTML=`<div class="wrap in"><a class="logo" href="#">${esc(P.name)}</a><nav aria-label="Navigasi">${D.sections.filter(s=>s.on&&s.nav).map(s=>`<a href="#${esc(s.id)}">${esc(s.nav)}</a>`).join("")}</nav><span class="tc" id="tc" aria-hidden="true">00:00:00:00</span>${D.settings.picker?`<div class="gr" role="group" aria-label="Pilih color grade">${GR.map(g=>`<button style="--c1:${g[2]};--c2:${g[3]}" data-gr="${g[0]}" aria-pressed="${g[0]==grade}" aria-label="Grade ${g[1]}" title="${g[1]}"></button>`).join("")}</div>`:""}</div><div class="pg" aria-hidden="true"><i></i></div>`;scr()};
-function heroItems(){const g=D.sections.map((s,si)=>({s,si})).filter(x=>x.s.on&&x.s.type=="gallery"),all=g.flatMap(x=>x.s.items.map((w,i)=>({...w,si:x.si,i}))),f=all.filter(w=>w.feat);
+function heroItems(){const g=D.sections.map((s,si)=>({s,si})).filter(x=>x.s.on&&x.s.type=="gallery"),all=g.flatMap(x=>x.s.items.map((w,i)=>({...w,si:x.si,i}))).filter(vis),f=all.filter(w=>w.feat);
   if(f.length)return f;if(all.length)return all.slice(0,5);
   return D.sections.flatMap((s,si)=>s.on&&s.type=="projects"?s.items.map((w,i)=>({...w,cat:w.year||"Proyek",n:w.client,si,i})):[]).slice(0,5)}
 function view(){
@@ -448,12 +521,17 @@ function view(){
   const R0=roles(),hh=heroItems(),wk=D.sections.find(s=>s.on&&(s.type=="gallery"||s.type=="projects")),ls=links();
   document.title=P.name+(R0.length?" – "+R0.slice(0,2).join(" & "):"");
   $('meta[name=description]').content=D.settings.desc||P.bio||"";
-  $("#app").innerHTML=`<header class="hero wrap${anim?"":" still"}"><div class="hg"><div>${P.status?`<span class="stt">${esc(P.status)}</span>`:""}<p class="hi">${esc(P.headline)}</p><h1 style="--L:${Math.max(4,...String(P.name).split(/\s+/).map(w=>w.length))}">${String(P.name).split(/\s+/).map((w,i)=>`<span class="w"><span style="--d:${i}">${esc(w)}</span></span>`).join("")}</h1><div class="roles">${R0.map((r,i)=>`<span style="--c:${CL[i%5]}">${esc(r)}</span>`).join("")}</div><p class="bio">${esc(P.bio)}</p><div class="cta">${wk?`<a class="b p" href="#${esc(wk.id)}">Lihat karya</a>`:""}${ok(P.cv)?`<button class="b" data-o="cv">Lihat CV</button>`:""}${ok(P.reel)?`<button class="b" data-o="r">Tonton showreel</button>`:""}<a class="b" href="${waUrl("Halo "+P.name+", saya mau diskusi proyek.")}" target="_blank" rel="noopener">Chat WhatsApp</a></div>${ls.length?`<div class="soc">${ls.map(l=>`<a href="${U(l.url)}" target="_blank" rel="noopener">${esc(l.n)}</a>`).join("")}</div>`:""}</div>
+  $("#app").innerHTML=`<header class="hero wrap${anim?"":" still"}"><div class="hg"><div>${P.status?`<span class="stt">${esc(P.status)}</span>`:""}<p class="hi">${esc(P.headline)}</p><h1 style="--L:${Math.max(4,...String(P.name).split(/\s+/).map(w=>w.length))}">${String(P.name).split(/\s+/).map((w,i)=>`<span class="w"><span style="--d:${i}">${esc(w)}</span></span>`).join("")}</h1><div class="roles">${R0.map((r,i)=>`<span style="--c:${CL[i%5]}">${esc(r)}</span>`).join("")}</div>${P.story?`<p class="sty">${esc(P.story)}</p>`:""}<p class="bio">${esc(P.bio)}</p><div class="cta">${wk?`<a class="b p" href="#${esc(wk.id)}">Lihat karya</a>`:""}${ok(P.cv)?`<button class="b" data-o="cv">Lihat CV</button>`:""}${ok(P.reel)?`<button class="b" data-o="r">Tonton showreel</button>`:""}<a class="b" href="${waUrl("Halo "+P.name+", saya mau diskusi proyek.")}" target="_blank" rel="noopener">Chat WhatsApp</a></div>${ls.length?`<div class="soc">${ls.map(l=>`<a href="${U(l.url)}" target="_blank" rel="noopener">${esc(l.n)}</a>`).join("")}</div>`:""}</div>
 <div class="mon" id="mon" aria-label="Sorotan karya">${hh.map(w=>`<button class="sl" data-o="${w.si}:${w.i}" aria-label="Putar ${esc(w.t)}">${th(w)}<em class="tg">${esc(w.cat)}</em><span class="pl"></span><span class="cp"><strong>${esc(w.t)}</strong><small>${esc(w.n)}</small></span></button>`).join("")||'<div class="empty">Belum ada karya.</div>'}<span class="vf"></span><span id="htc">00:00:00:00</span><div class="pip" title="${esc(P.name)}">${hasPh()?`<img src="${esc(P.photo)}" alt="${esc(P.name)}">`:ini()}</div><div class="sg">${hh.map((w,i)=>`<button data-hs="${i}" aria-label="Sorotan ${i+1}: ${esc(w.t)}"></button>`).join("")}</div></div></div></header>
 <main class="wrap">${D.sections.map((s,si)=>s.on||can?`<section id="${esc(s.id)}" class="${[anim&&!RM?"rv":"",s.on?"":"hid"].join(" ").trim()}">${R[s.type](s,si)}</section>`:"").join("")}</main>
 <footer><div class="wrap"><span>© ${new Date().getFullYear()} ${esc(P.name)}${P.city?" – "+esc(P.city):""}</span><span><a href="#">Kembali ke atas</a> · <a href="#" data-a="login">${can?"Keluar admin":"Admin"}</a></span></div></footer>`;
-  top();hsInit();revealInit();anim=false;
+  top();hsInit();revealInit();jrInit();anim=false;
 }
+
+/* ===== perjalanan: kartu bergerak horizontal mengikuti scroll (desktop) ===== */
+function jrInit(){$$(".jr").forEach(j=>{const t=j.querySelector(".jrt"),s=j.querySelector(".jrs");j.classList.remove("pin");j.style.removeProperty("--jw");
+  if(RM||innerWidth<=860)return;const w=t.scrollWidth-s.clientWidth;if(w<40)return;j.classList.add("pin");j.style.setProperty("--jw",w+"px");j.dataset.w=w});scr()}
+let rz;addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(jrInit,200)});
 
 /* ===== animasi muncul + angka berjalan ===== */
 let IO;function revealInit(){IO&&IO.disconnect();const els=$$(".rv:not(.in),[data-cnt]");if(!els.length)return;
@@ -476,11 +554,12 @@ const cur=()=>{if(LB.s=="r")return{t:"Showreel",cat:"Showreel",n:P.name,url:P.re
   if(LB.s=="cv")return{t:"Curriculum vitae",cat:"CV",n:P.name,url:P.cv,dl:1};
   const s=D.sections[LB.s],x=s&&s.items[LB.i];if(!x)return null;
   if(s.type=="folders")return{t:x.n,cat:x.cat,n:x.d,url:x.url,th:x.th};
-  if(s.type=="projects")return{t:x.t,cat:[x.client,x.year].filter(Boolean).join(" · ")||"Proyek",url:x.url,th:x.th,link:x.link,body:`${x.role?`<p><strong>Peran:</strong> ${esc(x.role)}</p>`:""}<div class="txt">${txt(x.d)}</div>${tags(x.tags)}`};
+  if(s.type=="projects")return{t:x.t,cat:[cl(x),x.year].filter(Boolean).join(" · ")||"Proyek",url:x.url,th:x.th,link:x.conf?"":x.link,body:`${x.role?`<p><strong>Peran:</strong> ${esc(x.role)}</p>`:""}<div class="txt">${txt(x.d)}</div>${tags(x.stack||x.tags)}`};
+  if(s.type=="gallery"){const r=[["Brand / klien",x.brand],["Peran saya",x.role],["Hasil",x.res]].filter(a=>a[1]);return{...x,body:r.length?`<dl class="lbd">${r.map(a=>`<dt>${a[0]}</dt><dd>${esc(a[1])}</dd>`).join("")}</dl>`:""}}
   if(s.type=="awards")return{t:x.t,cat:[x.org,x.year].filter(Boolean).join(" · ")||"Sertifikat",url:x.url};
   return x};
 const lbList=()=>{if(typeof LB.s=="string")return[0];const s=D.sections[LB.s],f=FW[LB.s]||"Semua";
-  return s.items.map((_,i)=>i).filter(i=>s.type=="gallery"?f=="Semua"||s.items[i].cat==f:s.type=="awards"?ok(s.items[i].url):true)};
+  return s.items.map((_,i)=>i).filter(i=>s.type=="gallery"?vis(s.items[i])&&(f=="Semua"||s.items[i].cat==f):s.type=="awards"?ok(s.items[i].url):true)};
 function openLB(s,i){LB={s,i};lbPaint();if(!lb.open)lb.showModal();HS.paused=true}
 function lbPaint(){const it=cur();if(!it){lb.open&&lb.close();return}
   const f=info(it.url),L=lbList(),pos=L.indexOf(LB.i),good=ok(it.url);let m;
@@ -500,16 +579,20 @@ lb.addEventListener("keydown",e=>{if(e.key=="ArrowRight")lbGo(1);else if(e.key==
 const dk=$("#dk");let DK={s:0,i:0,p:0,n:0};
 function slide(z,x,s,si){const k=t=>`<div class="dkk">${t}</div>`,tg=tags(x.tags);
   if(z.k=="cover")return`<span class="big" aria-hidden="true">${esc((x.org||x.role||"?").trim()[0]||"")}</span>${k(esc([s.title.replace(/\n/g," "),x.period].filter(Boolean).join(" · ")))}<h2>${esc(x.role)}</h2>${x.org||x.loc?`<p class="o">${esc([x.org,x.loc].filter(Boolean).join(" · "))}</p>`:""}${tg}`;
+  if(z.k=="pcover")return`<span class="big" aria-hidden="true">${esc((x.t||"?").trim()[0]||"")}</span>${k(esc(["Studi kasus",x.year].filter(Boolean).join(" · ")))}<h2>${esc(x.t)}</h2>${cl(x)||x.role?`<p class="o">${esc([cl(x),x.role].filter(Boolean).join(" · "))}</p>`:""}${tags(x.stack||x.tags)}`;
+  if(z.k=="sec")return`${k(esc(z.h))}<div class="lead txt">${txt(z.b)}</div>`;
+  if(z.k=="shots")return`${k(`Bukti${z.n>6?` ${z.j/6+1} / ${Math.ceil(z.n/6)}`:""} · klik untuk memperbesar`)}<div class="dsh">${z.sh.map((m,j)=>`<figure style="--d:${j}"><button class="dshb" data-zm="${esc(m.big)}" data-zc="${esc(m.t)}" aria-label="Perbesar ${esc(m.t||"screenshot")}"><img src="${esc(m.sm)}" alt="${esc(m.t)}" loading="lazy" referrerpolicy="no-referrer"></button>${m.t?`<figcaption>${esc(m.t)}</figcaption>`:""}</figure>`).join("")}</div>`;
+  if(z.k=="flow")return`${k("Cara kerja")}<ol class="dfl">${z.st.map((t,j)=>`<li style="--d:${j}"><span>${String(j+1).padStart(2,"0")}</span><p>${esc(t)}</p></li>`).join("")}</ol>`;
   if(z.k=="txt")return`${k("Konteks")}<div class="lead txt">${txt(x.story)}</div>`;
-  if(z.k=="num")return`${k("Dampak dalam angka")}<div class="dnum">${z.hl.map(h=>`<div><b data-dc>${esc(h.a)}</b><span>${esc(h.b)}</span></div>`).join("")}</div>`;
+  if(z.k=="num")return`${k(z.h||"Dampak dalam angka")}<div class="dnum">${z.hl.map(h=>`<div><b data-dc>${esc(h.a)}</b><span>${esc(h.b)}</span></div>`).join("")}</div>`;
   if(z.k=="pt")return`${k(`Kontribusi ${String(z.j+1).padStart(2,"0")} / ${String(z.n).padStart(2,"0")}`)}<div class="dpt"><span class="n">${String(z.j+1).padStart(2,"0")}</span><div>${z.p.t?`<h3>${esc(z.p.t)}</h3><p>${esc(z.p.d)}</p>`:`<p class="lead">${esc(z.p.d)}</p>`}</div></div>`;
   if(z.k=="media"){const f=info(z.url),e=embedOf(z.url);
     const m=f.k=="img"?`<img src="${esc(f.t)}" alt="${esc(z.t)}" loading="lazy">`:f.k!="link"&&e?`<iframe data-src="${esc(e)}" title="${esc(z.t)}" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><span class="ld">Memuat…</span>`:`<div class="th" style="${cvs(z.t)}" data-i="${esc(z.t[0]||"")}"></div>`;
     return`${k("Contoh proyek")}<div class="dmd"><div class="dmf${f.v?" v":""}">${m}</div><div><h3>${esc(z.t)}</h3><p>${esc(f.l||"")}</p><a class="b p" href="${U(z.url)}" target="_blank" rel="noopener">Buka ${f.k=="link"?"situs":"di "+esc(f.l)}</a></div></div>`}
   const nx=s.items[DK.i+1];
-  return`${k("Selesai")}<h2>Terima kasih sudah menyimak.</h2><p class="o">Tertarik dengan pengalaman ini? Mari ngobrol.</p><div class="cta">${nx?`<button class="b p" data-dk="${si}:${DK.i+1}">Berikutnya: ${esc(nx.role)} →</button>`:""}<button class="b${nx?"":" p"}" data-a="dkct">Hubungi saya</button><button class="b" data-a="dkx">Tutup</button></div>`}
-function openDeck(si,i){const s=D.sections[si],x=s&&s.items[i];if(!x)return;DK={s:si,i,p:0,n:0};const S=deckSlides(x);DK.n=S.length;
-  dk.innerHTML=`<div class="dkt"><span><b>${esc(x.org||s.title)}</b><span class="dkr"> · ${esc(x.role)}</span></span><span class="dkc"></span><button class="x" data-a="dkx" aria-label="Tutup">✕</button></div><div class="dks" id="dks">${S.map((z,p)=>`<article class="dsl" data-p="${p}" aria-roledescription="slide">${slide(z,x,s,si)}</article>`).join("")}</div><div class="dkb"><button class="b sm" data-a="dkp" aria-label="Slide sebelumnya">←</button><div class="dkg">${S.map((_,p)=>`<button data-dp="${p}" aria-label="Slide ${p+1}"></button>`).join("")}</div><button class="b sm p" data-a="dkn" aria-label="Slide berikutnya">→</button></div>`;
+  return`${k("Selesai")}<h2>Terima kasih sudah menyimak.</h2><p class="o">Tertarik dengan pengalaman ini? Mari ngobrol.</p><div class="cta">${nx?`<button class="b p" data-dk="${si}:${DK.i+1}">Berikutnya: ${esc(nx.role||nx.t)} →</button>`:""}<button class="b${nx?"":" p"}" data-a="dkct">Hubungi saya</button><button class="b" data-a="dkx">Tutup</button></div>`}
+function openDeck(si,i){const s=D.sections[si],x=s&&s.items[i];if(!x)return;DK={s:si,i,p:0,n:0};const S=deckSlides(x,s.type);DK.n=S.length;
+  dk.innerHTML=`<div class="dkt"><span><b>${esc(x.org||(s.type=="projects"?cl(x):"")||s.title)}</b><span class="dkr"> · ${esc(x.role||x.t)}</span></span><span class="dkc"></span><button class="x" data-a="dkx" aria-label="Tutup">✕</button></div><div class="dks" id="dks">${S.map((z,p)=>`<article class="dsl" data-p="${p}" aria-roledescription="slide">${slide(z,x,s,si)}</article>`).join("")}</div><div class="dkb"><button class="b sm" data-a="dkp" aria-label="Slide sebelumnya">←</button><div class="dkg">${S.map((_,p)=>`<button data-dp="${p}" aria-label="Slide ${p+1}"></button>`).join("")}</div><button class="b sm p" data-a="dkn" aria-label="Slide berikutnya">→</button></div>`;
   if(!dk.open)dk.showModal();HS.paused=true;dkGo(0)}
 function dkGo(p){p=Math.max(0,Math.min(DK.n-1,p));DK.p=p;
   $$("#dk .dsl").forEach((e,j)=>{e.classList.toggle("on",j==p);e.classList.toggle("pv",j<p);e.setAttribute("aria-hidden",j!=p)});
@@ -530,7 +613,7 @@ function printCV(){const vs=D.sections.filter(s=>s.on),sec=(t,b)=>b?`<h2>${esc(S
   vs.forEach(s=>{
     if(s.type=="timeline")h+=sec(s.title,s.items.map(x=>`<div class="e"><div><strong>${esc(x.role)}</strong>${x.org?` — ${esc(x.org)}`:""}${lines(x.d)}</div><small>${esc([x.period,x.loc].filter(Boolean).join(" · "))}</small></div>`).join(""));
     else if(s.type=="skills"){const gs=[...new Set(s.items.map(t=>t.g))];h+=sec(s.title,s.items.length?`<dl>${gs.map(g=>`<dt>${esc(g)}</dt><dd>${s.items.filter(t=>t.g==g).map(t=>esc(t.n)).join(", ")}</dd>`).join("")}</dl>`:"")}
-    else if(s.type=="projects")h+=sec(s.title,s.items.map(x=>`<div class="e"><div><strong>${esc(x.t)}</strong>${x.client?` — ${esc(x.client)}`:""}${x.role?`<br>${esc(x.role)}`:""}</div><small>${esc(x.year)}</small></div>`).join(""));
+    else if(s.type=="projects")h+=sec(s.title,s.items.map(x=>`<div class="e"><div><strong>${esc(x.t)}</strong>${cl(x)?` — ${esc(cl(x))}`:""}${x.role?`<br>${esc(x.role)}`:""}</div><small>${esc(x.year)}</small></div>`).join(""));
     else if(s.type=="awards")h+=sec(s.title,s.items.length?`<ul>${s.items.map(x=>`<li>${esc(x.t)}${x.org?`, ${esc(x.org)}`:""}${x.year?` (${esc(x.year)})`:""}</li>`).join("")}</ul>`:"");
   });
   const ls=links();h+=sec("Tautan",ls.length?`<p>${ls.map(l=>`${esc(l.n)}: ${esc(l.s)}`).join("<br>")}</p>`:"");
@@ -539,7 +622,8 @@ addEventListener("afterprint",()=>document.body.classList.remove("pcv"));
 const dl=(name,data,type)=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)};
 
 /* ===== scroll: timecode, progress, nav aktif ===== */
-let sk=0;function scr(){if(sk)return;sk=requestAnimationFrame(()=>{sk=0;const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;document.documentElement.style.setProperty("--sp",h>0?y/h:0);const t=$("#tc");if(t)t.textContent=tc(y/50);let c="";$$("main section").forEach(s=>{if(s.offsetTop<=y+220)c=s.id});$$(".top nav a").forEach(a=>a.setAttribute("aria-current",a.getAttribute("href")=="#"+c))})}
+let sk=0;function scr(){if(sk)return;sk=requestAnimationFrame(()=>{sk=0;const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;document.documentElement.style.setProperty("--sp",h>0?y/h:0);
+    $$(".jr").forEach(j=>{const r=j.getBoundingClientRect(),pin=j.classList.contains("pin"),k=pin?Math.max(0,Math.min(1,-r.top/Math.max(1,r.height-innerHeight))):Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight+r.height)));j.style.setProperty("--jk",k);if(pin)j.style.setProperty("--jp",(-k*(+j.dataset.w||0))+"px")});const t=$("#tc");if(t)t.textContent=tc(y/50);let c="";$$("main section").forEach(s=>{if(s.offsetTop<=y+220)c=s.id});$$(".top nav a").forEach(a=>a.setAttribute("aria-current",a.getAttribute("href")=="#"+c))})}
 addEventListener("scroll",scr,{passive:true});
 document.addEventListener("pointermove",e=>{const tl=e.target.closest&&e.target.closest(".tl");if(!tl)return;const x=e.clientX-tl.getBoundingClientRect().left;tl.style.setProperty("--px",x);const p=tl.querySelector(".ph b");if(p)p.textContent=tc(x/12)});
 document.addEventListener("error",e=>{const t=e.target;if(t.tagName=="IMG"&&t.dataset.th!==undefined)t.remove()},true);
@@ -547,12 +631,16 @@ function applyGrade(){const v=g=>GR.some(x=>x[0]==g),g=D.settings.picker&&v(ug)?
 try{ug=localStorage.getItem("grade")}catch(e){}applyGrade();
 
 /* ===== dashboard admin ===== */
-const PF=[["name","Nama"],["headline","Kalimat pembuka"],["roles","Keahlian utama (pisahkan dengan koma)"],["status","Status di hero (kosongkan untuk menyembunyikan)"],["bio","Bio singkat (tampil di hero dan CV)","a"],["city","Kota"],["wa","WhatsApp (format 628…)"],["email","Email"],["ig","Link profil Instagram"],["reel","Link showreel (opsional)"],["cv","Link file CV (PDF di Google Drive, akses Anyone with the link)"],["links","Tautan lain, satu per baris: Nama | link","a"]];
+const PF=[["name","Nama"],["headline","Kalimat pembuka"],["roles","Keahlian utama (pisahkan dengan koma)"],["status","Status di hero (kosongkan untuk menyembunyikan)"],["bio","Bio singkat (tampil di hero dan CV)","a"],["story","Kalimat cerita di hero (opsional, tampil menonjol di atas bio)","a"],["city","Kota"],["wa","WhatsApp (format 628…)"],["email","Email"],["ig","Link profil Instagram"],["reel","Link showreel (opsional)"],["cv","Link file CV (PDF di Google Drive, akses Anyone with the link)"],["links","Tautan lain, satu per baris: Nama | link","a"]];
 const fld=(s,i,k,l,v,a)=>`<label>${l}${a?`<textarea data-s="${s}" data-i="${i}" data-k="${k}" rows="3">${esc(v)}</textarea>`:`<input data-s="${s}" data-i="${i}" data-k="${k}" value="${esc(v)}">`}</label>`;
 function row(si,i,it){const T=TYPES[D.sections[si].type],k=si+":"+i,t=it[T.f[0][0]],f=info(it.url),mv=(d,l)=>`<button class="b sm" data-a="mv" data-v="${k}:${d}" aria-label="${l}">${d<0?"▲":"▼"}</button>`;
   let b=T.f.map(f=>fld(si,i,f[0],f[1],it[f[0]]||"",f[2])).join("");
   if(T.th)b+=`<div class="row"><span class="hint">${f.auto?"Thumbnail otomatis dari "+esc(f.l)+". Unggah gambar bila ingin menggantinya.":"Thumbnail tidak bisa otomatis untuk link ini. Unggah gambar atau ambil satu frame dari file video."}</span><label class="b sm">Unggah gambar<input hidden type="file" accept="image/*" data-a="th" data-s="${si}" data-i="${i}"></label><label class="b sm">Ambil dari video<input hidden type="file" accept="video/*" data-a="thv" data-s="${si}" data-i="${i}"></label><button class="b sm" data-a="thx" data-v="${k}">Hapus thumbnail</button></div><label>Atau URL gambar / link file Drive<input data-s="${si}" data-i="${i}" data-k="th" value="${esc(/^data:/.test(it.th||"")?"":it.th||"")}" placeholder="${/^data:/.test(it.th||"")?"(gambar terunggah dipakai)":"https://…"}"></label>`;
   if(T.feat)b+=`<label class="ck2"><input type="checkbox" data-s="${si}" data-i="${i}" data-k="feat" ${it.feat?"checked":""}> Tampilkan di sorotan hero</label>`;
+  if(T.perm)b+=`<label class="ck2"><input type="checkbox" data-s="${si}" data-i="${i}" data-k="noperm" ${it.noperm?"checked":""}> Belum ada izin dari brand: sembunyikan dari pengunjung</label>`;
+  if(T.conf)b+=`<label class="ck2"><input type="checkbox" data-s="${si}" data-i="${i}" data-k="conf" ${it.conf?"checked":""}> Rahasiakan nama klien & link proyek (pakai nama samaran)</label>`;
+  if(T.proof){const pf=new Set(it.proof||[]),cs=proofCands();
+    b+=`<label class="ck2"><input type="checkbox" data-s="${si}" data-i="${i}" data-k="top" ${it.top?"checked":""}> Keahlian unggulan (tampil besar di atas)</label><fieldset class="pfs"><legend>Bukti keahlian ini (${pf.size})</legend>${cs.length?cs.map(c=>`<label class="ck2"><input type="checkbox" data-pf="${si}:${i}" value="${esc(c.key)}" ${pf.has(c.key)?"checked":""}> ${esc(c.key.split("|").slice(1).join("|"))} <small>${esc(c.kind)}</small></label>`).join(""):'<span class="hint">Isi dulu proyek, karya, sertifikat, atau pengalaman.</span>'}</fieldset>`}
   return`<details class="it" data-ex="${k}" ${exp.has(k)?"open":""}><summary>${T.th?`<span class="mini">${th({t,th:it.th,url:it.url})}</span>`:""}<span>${esc(t||"(kosong)")}</span></summary><div class="itb">${b}<div class="row">${mv(-1,"Naikkan")}${mv(1,"Turunkan")}<button class="b sm del" data-a="del" data-v="${k}">Hapus</button></div></div></details>`}
 const secList=()=>`<p class="hint">Atur urutan bagian halaman, sembunyikan yang belum siap, atau tambah bagian baru. Klik nama bagian untuk mengisi isinya.</p>`+D.sections.map((s,si)=>{const T=TYPES[s.type];return`<div class="sr${s.on?"":" off"}"><div class="mvb"><button class="b sm" data-a="smv" data-v="${si}:-1" aria-label="Naikkan">▲</button><button class="b sm" data-a="smv" data-v="${si}:1" aria-label="Turunkan">▼</button></div><button class="srn" data-a="sel" data-v="${si}"><strong>${esc(String(s.title).replace(/\n/g," ")||"(tanpa judul)")}</strong><small>${esc(T.l)}${T.f?` · ${s.items.length} item`:""}${s.on?"":" · tersembunyi"}</small></button><button class="b sm" data-a="vis" data-v="${si}">${s.on?"Sembunyikan":"Tampilkan"}</button></div>`}).join("")
   +`<div class="add"><select id="nt" aria-label="Jenis bagian baru">${Object.entries(TYPES).map(([k,v])=>`<option value="${k}">${esc(v.l)}</option>`).join("")}</select><button class="b p sm" data-a="addsec">+ Tambah bagian</button></div>`;
@@ -574,7 +662,7 @@ function adm(){const e=$("#adm");if(!can){e.innerHTML="";return}const sc=$(".bd"
     h+=tab=="profil"?`<div class="row"><label class="b sm">Unggah foto profil<input hidden type="file" accept="image/*" data-a="photo"></label>${P.photo?'<button class="b sm" data-a="photox">Hapus foto</button>':""}</div>`+PF.map(f=>fld("profile","",f[0],f[1],P[f[0]]||"",f[2])).join(""):tab=="set"?setTab():sel==null||!D.sections[sel]?secList():secEdit(sel);
     h+=`</div><div class="ft"><button class="b p" data-a="save">Simpan & terbitkan</button><span id="st"></span><small id="sz"></small></div></aside>`}
   e.innerHTML=h;if(sc&&$(".bd"))$(".bd").scrollTop=sc;sz()}
-const sz=()=>{const el=$("#sz");if(el)el.textContent=Math.round(new Blob([JSON.stringify(D)]).size/1000)+" / 1000 KB"};
+const sz=()=>{const el=$("#sz");if(!el)return;const k=Math.round(new Blob([JSON.stringify(D)]).size/1000);el.textContent=k+" / 1000 KB"+(k>800?" · hampir penuh, pakai URL gambar untuk thumbnail":"");el.style.color=k>800?"var(--a)":""};
 const newItem=t=>{const o=Object.fromEntries(TYPES[t].f.map(f=>[f[0],""]));if(TYPES[t].th)o.th="";return o};
 const newSec=t=>{const T=TYPES[t],s={id:uid(T.l),type:t,title:T.l,nav:"",sub:"",on:true,items:[]};(T.sf||[]).forEach(f=>s[f[0]]="");return s};
 /* data lama (works/folders/tools) otomatis dipindah ke bagian baru; bagian contoh yang baru disembunyikan dulu */
@@ -612,8 +700,12 @@ async function save(){
 }
 const ch=(r=1)=>{dirty=true;adm();if(r)view()};
 document.addEventListener("click",async e=>{
-  const t=e.target.closest("[data-f],[data-o],[data-gr],[data-hs],[data-b],[data-a],[data-dk],[data-dp]");if(!t)return;const d=t.dataset,S=D.sections;
-  if(d.dk){const[a,b]=d.dk.split(":");openDeck(+a,+b)}
+  const t=e.target.closest("[data-f],[data-o],[data-gr],[data-hs],[data-b],[data-a],[data-dk],[data-dp],[data-sk],[data-zm]");if(!t)return;const d=t.dataset,S=D.sections;
+  if(d.zm){const z=document.createElement("div");z.className="zmv";z.dataset.a="zmx";z.innerHTML=`<img src="${esc(d.zm)}" alt="${esc(d.zc)}" referrerpolicy="no-referrer">${d.zc?`<p>${esc(d.zc)}</p>`:""}<button class="pfx" aria-label="Tutup">✕</button>`;(t.closest("dialog")||document.body).append(z)}
+  else if(d.a=="zmx")t.remove();
+  else if(d.sk){const[a,b]=d.sk.split(":").map(Number);if(t.getAttribute("aria-pressed")=="true"){$("#pfp-"+a)?.classList.remove("on");t.setAttribute("aria-pressed","false")}else proofPanel(a,b)}
+  else if(d.a=="pfx"){$("#pfp-"+d.v)?.classList.remove("on");$$(`[data-sk^="${d.v}:"]`).forEach(b=>b.setAttribute("aria-pressed","false"))}
+  else if(d.dk){const[a,b]=d.dk.split(":");openDeck(+a,+b)}
   else if(d.dp!==undefined)dkGo(+d.dp);
   else if(d.a=="dkn")dkGo(DK.p+1);else if(d.a=="dkp")dkGo(DK.p-1);else if(d.a=="dkx")dk.close();
   else if(d.a=="dkct"){dk.close();const c=S.find(s=>s.on&&s.type=="contact");if(c)document.getElementById(c.id)?.scrollIntoView({behavior:RM?"auto":"smooth"})}
@@ -651,7 +743,9 @@ document.addEventListener("click",async e=>{
 const tgt=d=>d.s=="profile"?P:d.s=="set"?D.settings:d.i===""?D.sections[d.s]:D.sections[d.s].items[d.i];
 document.addEventListener("input",e=>{const t=e.target,d=t.dataset;if(!d.k)return;tgt(d)[d.k]=t.type=="checkbox"?t.checked:t.value;dirty=true;clearTimeout(tm);tm=setTimeout(()=>{view();sz()},350)});
 document.addEventListener("toggle",e=>{const k=e.target.dataset&&e.target.dataset.ex;if(k)e.target.open?exp.add(k):exp.delete(k)},true);
-document.addEventListener("change",async e=>{const t=e.target,d=t.dataset,f=t.files&&t.files[0];if(!f||!d.a)return;
+document.addEventListener("change",async e=>{const t=e.target,d=t.dataset,f=t.files&&t.files[0];
+  if(d.pf){const[s,i]=d.pf.split(":"),it=D.sections[s].items[i],a=new Set(it.proof||[]);t.checked?a.add(t.value):a.delete(t.value);it.proof=[...a];ch();return}
+  if(!f||!d.a)return;
   try{if(d.a=="photo")P.photo=await shrink(f,640,.85);else if(d.a=="th")D.sections[d.s].items[d.i].th=await shrink(f,480,.72);else if(d.a=="thv")D.sections[d.s].items[d.i].th=await frame(f);
     else if(d.a=="imp"){D=norm(JSON.parse(await f.text()));P=D.profile;sel=null;exp.clear();ch();toast("Cadangan dimuat. Klik Simpan & terbitkan.");return}else return}
   catch(x){toast(d.a=="imp"?"File cadangan tidak valid":"Gambar gagal diproses");return}
